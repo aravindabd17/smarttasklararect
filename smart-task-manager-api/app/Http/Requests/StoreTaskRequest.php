@@ -27,6 +27,7 @@ class StoreTaskRequest extends FormRequest
             'title'=>'required|min:6',
             'description'=>'required',
             'status'=>'required|in:pending,in-progress,completed',
+            'attachment'=>'nullable|mimes:png,jpg,jpeg,webp|max:2048',
         ];
     }
 }

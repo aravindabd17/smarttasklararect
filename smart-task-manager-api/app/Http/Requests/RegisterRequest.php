@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateTaskRequest extends FormRequest
+class RegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,9 @@ class UpdateTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'required|exists:users,id',
-            'title'=>'required|min:6',
-            'description'=>'required',
-            'status'=>'required|in:pending,in-progress,completed',
-            'attachment'=>'nullable|mimes:png,jpg,jpeg,webp|max:2048',
+            'name'=>'required|min:3',
+            'email'=>'required|email|unique:users,email',
+            'password'=>'required|min:6|confirmed'
         ];
     }
 }
