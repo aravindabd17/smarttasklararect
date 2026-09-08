@@ -23,9 +23,11 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'user_id',
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -67,5 +69,9 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->hasMany(Role::class);
+    }
+    public function activityLogs()
+    {
+        return $this->hasMany(ActivityLog::class);
     }
 }

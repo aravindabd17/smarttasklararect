@@ -27,7 +27,7 @@ class TaskCreatedNotification extends Notification implements ShouldQueue
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -54,7 +54,9 @@ class TaskCreatedNotification extends Notification implements ShouldQueue
     {
         return [
             "task title"=>$this->task->title,
-            'task id'=>$this->task->id
+            'task id'=>$this->task->id,
+            "status"=>$this->task->status,
+            "description"=>$this->task->description
         ];
     }
 }

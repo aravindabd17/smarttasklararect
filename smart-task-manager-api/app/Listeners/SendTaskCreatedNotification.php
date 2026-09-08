@@ -6,6 +6,7 @@ use App\Events\TaskCreated;
 use App\Notifications\TaskCreatedNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Log;
 
 class SendTaskCreatedNotification
 {
@@ -22,6 +23,7 @@ class SendTaskCreatedNotification
      */
     public function handle(TaskCreated $event): void
     {
+        Log::info('Listener Executed');
         $event->task->user->notify(new TaskCreatedNotification($event->task));
     }
 }

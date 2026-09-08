@@ -25,6 +25,7 @@ class TaskResource extends JsonResource
             'attachment'=>$this->attachment,
             'attachment_url'=>$this->attachment?Storage::url($this->attachment):null,
             'user'=>new UserResource($this->whenLoaded('user')),
+            'user_id'=>$this->user_id,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at
         ];

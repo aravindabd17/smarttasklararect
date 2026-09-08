@@ -23,11 +23,11 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'required|exists:users,id',
+            // 'user_id'=>'required|exists:users,id',
             'title'=>'required|min:6',
             'description'=>'required',
             'status'=>'required|in:pending,in-progress,completed',
-            'attachment'=>'nullable|mimes:png,jpg,jpeg,webp|max:2048',
+            'attachment'=>'nullable|mimes:png,pdf,jpg,jpeg,webp|max:2048',
         ];
     }
 }
