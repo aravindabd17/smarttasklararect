@@ -215,7 +215,7 @@ const Users = () => {
                 }
             </tbody>
         </table>
-        <ul className='pagination mt-4'>
+        <ul className='pagination mt-4 justify-content-center'>
             <li
                 className={`page-item ${currentPage==1?"disabled":""}`}
             >
