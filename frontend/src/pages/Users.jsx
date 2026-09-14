@@ -144,7 +144,7 @@ const Users = () => {
         }
     }
   }
-  if(allUsers.length<1) return <h3>Posts not found</h3>;
+  if(allUsers.length<1) return <h3>Post not found</h3>;
   return (
     <>
     <div className='mt-4 pt-3'>
